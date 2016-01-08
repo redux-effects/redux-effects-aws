@@ -47,11 +47,21 @@ io(flo(function * () {
 
 ## API
 
-### reduxEffectsAws(config)
+### awsMiddleware (config)
+Effect driver.
 
 - `config` - global aws config (e.g. region, output...)
 
 **Returns:** redux effects middleware
+
+### aws (service, method, params)
+Action creator.
+
+  - `service` - The service to use. Optionally can be an object with the signature,
+                {service, options}, if you need to specify service options.
+  - `method` - Method to call on service.
+  - `params` - Params to use for call.
+
 
 ## License
 

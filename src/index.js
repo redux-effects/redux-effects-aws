@@ -14,7 +14,15 @@ import isObject from '@f/is-object'
 const AWS_ACTION = 'AWS'
 
 /**
- * redux-effects-aws
+ * AWS effect driver that processes AWS actions.
+ * @param  {Object} config Optional global config for a AWS.
+ * @return {Function}      Redux middleware.
+ *
+ * AWS Action Payload:
+ * 	- `service` - aws service
+ * 	- `options` - options for creation of aws service instance
+ * 	- `method` - method to call on `service` instance
+ * 	- `params` - params for method call
  */
 
 function awsMiddleware (config) {
@@ -34,13 +42,18 @@ function awsMiddleware (config) {
   }
 }
 
+
 /**
- * Action creator
+ * AWS action creator
+ * @param  {String|Object} serviceAndOpts Service string or object with `service` and service `options`.
+ * @param  {String} method                Service method
+ * @param  {Object} params                Service method params
+ * @return {Object}                       AWS action
  */
 
 function aws (serviceAndOpts, method, params) {
   let {service, options} = isObject(serviceAndOpts)
-    ? serviceAndOpts 
+    ? serviceAndOpts
     : {service: serviceAndOpts}
 
   return {type: AWS_ACTION, payload: {service, options, method, params}}

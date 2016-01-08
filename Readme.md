@@ -15,17 +15,43 @@ AWS SDK effect driver.
 ## Usage
 
 ```js
-var reduxEffectsAws = require('redux-effects-aws')
+import awsMiddleware, {aws} from 'redux-effects-aws'
+import flow, {flo} from 'redux-flo'
+import bind from '@f/bind-middleware'
 
+const io = bind([
+  flow()
+  awsMiddleware()
+])
+
+// update s3 object
+io(flo(function * () {
+  // get object
+  let data = yield aws('S3', 'getObject', {
+    Bucket: 'test-bucket.weo.io',
+    Key: 'test.json'
+  })
+  let obj = JSON.parse(data.BODY.toString())
+
+  // update
+  obj.foo = 'qux'
+
+  // put object
+  yield aws('S3', 'putObject', {
+    Bucket: 'test-bucket.we.io',
+    Key: 'test.json',
+    Body: JSON.stringify(obj)
+  })
+}))
 ```
 
 ## API
 
-### reduxEffectsAws(arg)
+### reduxEffectsAws(config)
 
-- `arg` -
+- `config` - global aws config (e.g. region, output...)
 
-**Returns:**
+**Returns:** redux effects middleware
 
 ## License
 

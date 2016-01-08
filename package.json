@@ -13,7 +13,7 @@
   "dependencies": {
     "@f/is-object": "^1.1.1",
     "@f/thunk-to-promise": "^1.1.1",
-    "@yaws/read-region": "^1.0.0",
+    "@yaws/read-region": "^1.0.1",
     "aws-sdk": "^2.2.28"
   },
   "devDependencies": {

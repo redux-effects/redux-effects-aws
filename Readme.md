@@ -12,6 +12,11 @@ AWS SDK effect driver.
 
     $ npm install redux-effects-aws
 
+## Why
+
+Makes it easy to write testable server side code that interacts with AWS services
+without mocking or running development services.
+
 ## Usage
 
 ```js
@@ -24,8 +29,11 @@ const io = bind([
   awsMiddleware()
 ])
 
-// update s3 object
-io(flo(function * () {
+// run update
+io(flo(testableUpdate))
+
+// Action creator that updates an s3 object.
+function * testableUpdate () {
   // get object
   let data = yield aws('S3', 'getObject', {
     Bucket: 'test-bucket.weo.io',
@@ -42,7 +50,7 @@ io(flo(function * () {
     Key: 'test.json',
     Body: JSON.stringify(obj)
   })
-}))
+}
 ```
 
 ## API

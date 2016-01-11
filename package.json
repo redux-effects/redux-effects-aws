@@ -2,7 +2,7 @@
   "name": "redux-effects-aws",
   "description": "AWS SDK effect driver.",
   "repository": "git://github.com/redux-effects/redux-effects-aws.git",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {

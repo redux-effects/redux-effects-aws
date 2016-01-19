@@ -75,10 +75,10 @@ Action creator.
 
 MIT
 
-[travis-image]: https://img.shields.io/travis/micro-js/redux-effects-aws.svg?style=flat-square
-[travis-url]: https://travis-ci.org/micro-js/redux-effects-aws
-[git-image]: https://img.shields.io/github/tag/micro-js/redux-effects-aws.svg
-[git-url]: https://github.com/micro-js/redux-effects-aws
+[travis-image]: https://img.shields.io/travis/redux-effects/redux-effects-aws.svg?style=flat-square
+[travis-url]: https://travis-ci.org/redux-effects/redux-effects-aws
+[git-image]: https://img.shields.io/github/tag/redux-effects/redux-effects-aws.svg
+[git-url]: https://github.com/redux-effects/redux-effects-aws
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat
 [standard-url]: https://github.com/feross/standard
 [npm-image]: https://img.shields.io/npm/v/redux-effects-aws.svg?style=flat-square
